@@ -96,11 +96,10 @@ az ad sp create-for-rbac `
 > az provider list --query "[?namespace=='Microsoft.AppPlatform']" --output table
 > ```
 > Output:
-> ```
+> 
 > Namespace              RegistrationState    RegistrationPolicy  
----------------------  -------------------  --------------------
-Microsoft.AppPlatform  Registered           RegistrationRequired
-> ```
+> ---------------------  -------------------  --------------------
+> Microsoft.AppPlatform  Registered           RegistrationRequired
 
 ## Workflows in this sample
 
