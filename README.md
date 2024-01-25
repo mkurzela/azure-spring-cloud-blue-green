@@ -84,7 +84,13 @@ az ad sp create-for-rbac `
 
 1. This will start a new workflow run and deploy the necessary infrastructure. 
 
-1. Double check in the Azure Portal that all resources got deployed correctly and are up and running. 
+1. Double check in the Azure Portal that all resources got deployed correctly and are up and running.
+
+> [!NOTE]
+> You may need to register missing provider
+> ``` azure cli
+> az provider register --namespace Microsoft.AppPlatform
+> ```.
 
 ## Workflows in this sample
 
