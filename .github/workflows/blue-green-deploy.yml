@@ -11,7 +11,7 @@ env:
     DEFAULT_DEPLOYMENT: default
     NEW_DEPLOYMENT: green
     #PACKAGE_PATH: piggymetrics
-    PACKAGE_PATH: spring-petclinic
+    PACKAGE_PATH: spring-petclinic-microservices
 
 jobs:
   build:
