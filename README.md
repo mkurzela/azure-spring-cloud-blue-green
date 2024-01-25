@@ -70,7 +70,7 @@ az ad sp create-for-rbac `
 
 1. Copy the full output from this command. 
 
-1. In your GitHub repo navigate to *Settings* > *Secrets* and select *New Repository Secret*.
+1. In your GitHub repo navigate to *Settings* > *Secrets and Variables* > *Actions* and select *New Repository Secret*.
 
 1. Name the secret _AZURE_CREDENTIALS_ and paste the output from the 'az ad sp create-for-rbac' command in the value textbox.
 
