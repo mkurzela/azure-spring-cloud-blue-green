@@ -8,7 +8,8 @@ env:
     APP_NAME: gateway
     DEFAULT_DEPLOYMENT: default
     NEW_DEPLOYMENT: green
-    PACKAGE_PATH: piggymetrics
+    #PACKAGE_PATH: piggymetrics
+    PACKAGE_PATH: azure-search-openai-demo-java
 
 jobs:
   build:
