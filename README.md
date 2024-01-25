@@ -90,7 +90,7 @@ az ad sp create-for-rbac `
 > You may need to register missing provider
 > ``` azure cli
 > az provider register --namespace Microsoft.AppPlatform
-> ```.
+> ```
 
 ## Workflows in this sample
 
