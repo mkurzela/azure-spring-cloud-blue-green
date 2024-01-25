@@ -91,6 +91,16 @@ az ad sp create-for-rbac `
 > ``` azure cli
 > az provider register --namespace Microsoft.AppPlatform
 > ```
+> To check whether registered use
+> ``` azure cli
+> az provider list --query "[?namespace=='Microsoft.AppPlatform']" --output table
+> ```
+> Output:
+> ```
+> Namespace              RegistrationState    RegistrationPolicy  
+---------------------  -------------------  --------------------
+Microsoft.AppPlatform  Registered           RegistrationRequired
+> ```
 
 ## Workflows in this sample
 
