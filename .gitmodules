@@ -4,3 +4,6 @@
 [submodule "azure-search-openai-demo-java"]
 	path = azure-search-openai-demo-java
 	url = https://github.com/Azure-Samples/azure-search-openai-demo-java
+[submodule "spring-petclinic"]
+	path = spring-petclinic
+	url = https://github.com/spring-projects/spring-petclinic
