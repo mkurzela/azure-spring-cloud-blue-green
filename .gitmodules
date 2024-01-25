@@ -1,3 +1,6 @@
 [submodule "piggymetrics"]
 	path = piggymetrics
 	url = https://github.com/Azure-Samples/piggymetrics
+[submodule "azure-search-openai-demo-java"]
+	path = azure-search-openai-demo-java
+	url = https://github.com/Azure-Samples/azure-search-openai-demo-java
