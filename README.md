@@ -34,7 +34,7 @@ $RESOURCE_GROUP='spring-cloud-rg'
 $LOCATION = 'westus'
 ```
 
-1. Login to your Azure account and make sure the correct subscription is active. 
+2. Login to your Azure account and make sure the correct subscription is active. 
 
 ```azurecli
 az login
@@ -42,20 +42,20 @@ az account list -o table
 az account set <your-subscription-id>
 ```
 
-1. Create a resource group for all necessary resources.
+3. Create a resource group for all necessary resources.
 
 ```azurecli
 az group create --name $RESOURCE_GROUP --location $LOCATION
 ```
 
-1. Copy the resource group ID which is outputted in the previous step to a new environment variable.
+4. Copy the resource group ID which is outputted in the previous step to a new environment variable.
 
 ```azurecli
 $RESOURCE_GROUP_ID=<resource group ID from previous output>
 ```
 E.g.: $RESOURCE_GROUP_ID = "/subscriptions/a3ab87c4-bb2a-469b-a034-c42ba21b5289/resourceGroups/spring-cloud-rg"
 
-1. Create a service principal and give it access to the resource group.
+5. Create a service principal and give it access to the resource group.
 
 ```azure cli
 az ad sp create-for-rbac `
