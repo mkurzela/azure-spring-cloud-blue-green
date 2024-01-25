@@ -30,8 +30,8 @@ You will need the latest version of the [Azure CLI](https://docs.microsoft.com/e
 1. Define environment variables.
 
 ```bash
-RESOURCE_GROUP='spring-cloud-rg'
-LOCATION=westus
+$RESOURCE_GROUP='spring-cloud-rg'
+$LOCATION = 'westus'
 ```
 
 1. Login to your Azure account and make sure the correct subscription is active. 
