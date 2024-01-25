@@ -7,3 +7,6 @@
 [submodule "spring-petclinic"]
 	path = spring-petclinic
 	url = https://github.com/spring-projects/spring-petclinic
+[submodule "spring-petclinic-microservices"]
+	path = spring-petclinic-microservices
+	url = https://github.com/Azure-Samples/spring-petclinic-microservices
