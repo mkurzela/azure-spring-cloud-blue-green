@@ -97,9 +97,9 @@ az ad sp create-for-rbac `
 > ```
 > Output:
 > 
-> Namespace              RegistrationState    RegistrationPolicy  
-> ---------------------  -------------------  --------------------
-> Microsoft.AppPlatform  Registered           RegistrationRequired
+> Namespace                RegistrationState    RegistrationPolicy
+> ___
+> Microsoft.AppPlatform    Registered           RegistrationRequired
 
 ## Workflows in this sample
 
