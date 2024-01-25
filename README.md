@@ -30,11 +30,11 @@ You will need the latest version of the [Azure CLI](https://docs.microsoft.com/e
 1. Define environment variables.
 
 ```bash
-RESOURCE_GROUP='spring-cloud-rg'
-LOCATION=westus
+$RESOURCE_GROUP='spring-cloud-rg'
+$LOCATION = 'westus'
 ```
 
-1. Login to your Azure account and make sure the correct subscription is active. 
+2. Login to your Azure account and make sure the correct subscription is active. 
 
 ```azurecli
 az login
@@ -42,26 +42,27 @@ az account list -o table
 az account set <your-subscription-id>
 ```
 
-1. Create a resource group for all necessary resources.
+3. Create a resource group for all necessary resources.
 
 ```azurecli
 az group create --name $RESOURCE_GROUP --location $LOCATION
 ```
 
-1. Copy the resource group ID which is outputted in the previous step to a new environment variable.
+4. Copy the resource group ID which is outputted in the previous step to a new environment variable.
 
 ```azurecli
-RESOURCE_GROUP_ID=<resource group ID from previous output>
+$RESOURCE_GROUP_ID=<resource group ID from previous output>
 ```
+E.g.: $RESOURCE_GROUP_ID = "/subscriptions/a3ab87c4-bb2a-469b-a034-c42ba21b5289/resourceGroups/spring-cloud-rg"
 
-1. Create a service principal and give it access to the resource group.
+5. Create a service principal and give it access to the resource group.
 
 ```azure cli
-az ad sp create-for-rbac \
-  --name SpringCloudGHBicepActionWorkflow \
-  --role Contributor \
-  --scopes $RESOURCE_GROUP_ID \
-  --sdk-auth
+az ad sp create-for-rbac `
+   --name "SpringCloudGHBicepActionWorkflow" `
+   --role Contributor `
+   --scopes $RESOURCE_GROUP_ID `
+   --sdk-auth
 ```
 
 > [!NOTE]
@@ -69,7 +70,7 @@ az ad sp create-for-rbac \
 
 1. Copy the full output from this command. 
 
-1. In your GitHub repo navigate to *Settings* > *Secrets* and select *New Repository Secret*.
+1. In your GitHub repo navigate to *Settings* > *Secrets and Variables* > *Actions* and select *New Repository Secret*.
 
 1. Name the secret _AZURE_CREDENTIALS_ and paste the output from the 'az ad sp create-for-rbac' command in the value textbox.
 
@@ -83,7 +84,22 @@ az ad sp create-for-rbac \
 
 1. This will start a new workflow run and deploy the necessary infrastructure. 
 
-1. Double check in the Azure Portal that all resources got deployed correctly and are up and running. 
+1. Double check in the Azure Portal that all resources got deployed correctly and are up and running.
+
+> [!NOTE]
+> You may need to register missing provider
+> ``` azure cli
+> az provider register --namespace Microsoft.AppPlatform
+> ```
+> To check whether registered use
+> ``` azure cli
+> az provider list --query "[?namespace=='Microsoft.AppPlatform']" --output table
+> ```
+> Output:
+> 
+> Namespace                RegistrationState    RegistrationPolicy
+> ___
+> Microsoft.AppPlatform    Registered           RegistrationRequired
 
 ## Workflows in this sample
 
